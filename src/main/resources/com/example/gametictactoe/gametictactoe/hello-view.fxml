@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="318.0" prefWidth="484.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gametictactoe.gametictactoe.HelloController">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="500.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gametictactoe.gametictactoe.HelloController"  style="-fx-background-color: lightblue;">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -23,9 +23,9 @@
         </Label>
     </HBox>
 
-    <GridPane prefHeight="98.0" prefWidth="460.0">
+    <GridPane prefHeight="320.0" prefWidth="460.0" >
         <!-- Tic-Tac-Toe game board cells -->
-        <Button onAction="#cellClicked" text="" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Button onAction="#cellClicked" prefHeight="26.0" prefWidth="14.0" text="" GridPane.columnIndex="0" GridPane.rowIndex="0" />
         <Button onAction="#cellClicked" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" />
         <Button onAction="#cellClicked" text="" GridPane.columnIndex="2" GridPane.rowIndex="0" />
         <Button onAction="#cellClicked" text="" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -34,17 +34,19 @@
         <Button onAction="#cellClicked" text="" GridPane.columnIndex="0" GridPane.rowIndex="2" />
         <Button onAction="#cellClicked" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         <Button onAction="#cellClicked" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-      <columnConstraints>
-         <ColumnConstraints />
-         <ColumnConstraints />
-         <ColumnConstraints />
-      </columnConstraints>
-      <rowConstraints>
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-      </rowConstraints>
-    </GridPane>
+
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+
+    </>
 
     <ButtonBar prefHeight="30.0" prefWidth="460.0" VBox.vgrow="ALWAYS">
         <buttons>
