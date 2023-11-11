@@ -1,14 +1,19 @@
 package com.example.gametictactoe.gametictactoe;
 
+
 public class Modell {
-    private char[][] board;
+    private  char[][] board;
     private char player1;
+    private char computerPlayer;
     private int playerScore;
     private int computerScore;
+
+    private HelloController controller;
 
     public Modell() {
         board = new char[3][3];
         player1 = 'X';
+        computerPlayer = 'O';
         playerScore = 0;
         computerScore = 0;
 
@@ -17,7 +22,10 @@ public class Modell {
                 board[row][col] = ' ';
             }
         }
-
+    }
+    public Modell(HelloController controller) {
+        this();
+        this.controller = controller;
     }
     public boolean makeMove(int row, int col) {
         if (row < 0 || row >= 3 || col < 0 || col >= 3 || board[row][col] != ' ') {
@@ -137,4 +145,60 @@ public class Modell {
     public void startNewGame() {
         resetGame();
     }
+    private void notifyComputerMove(int row, int col) {
+        controller.notifyComputerMove(row, col);
+    }
+
+    public void makeComputerMove() {
+        if (isGameOver()) {
+                return;
+        }
+
+        char opponent = (player1 == 'X') ? 'O' : 'X';
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == ' ') {
+                    board[i][j] = player1;
+
+                    if (checkForWinner(i, j)) {
+                            board[i][j] = ' ';
+                            notifyComputerMove(i, j);
+                            return;
+                        }
+
+                        board[i][j] = opponent;
+
+                    if (checkForWinner(i, j)) {
+                            board[i][j] = player1;
+                            notifyComputerMove(i, j);
+                            return;
+                        }
+
+                        board[i][j] = ' ';
+                    }
+                }
+            }
+
+
+            int row, col;
+            do {
+                row = (int) (Math.random() * 3);
+                col = (int) (Math.random() * 3);
+            } while (!makeMove(row, col));
+
+            notifyComputerMove(row, col);
+        }
+
+
+    public char getComputerPlayer() {
+        return computerPlayer;
+    }
+
+    public void setComputerPlayer(char computerPlayer) {
+        this.computerPlayer = computerPlayer;
+    }
 }
+
+
+

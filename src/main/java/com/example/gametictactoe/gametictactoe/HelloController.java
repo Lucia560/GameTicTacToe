@@ -52,7 +52,6 @@ public class HelloController {
 
         if (modell.makeMove(row, col)) {
             clickedButton.setText(Character.toString(modell.getPlayer1()));
-
             Font font = Font.font("System", FontWeight.BOLD, 24);
             clickedButton.setFont(font);
 
@@ -66,9 +65,11 @@ public class HelloController {
                 }
             } else {
                 modell.switchPlayer();
+                makeComputerMove();
             }
         }
     }
+
 
 
     private void updateScoreLabels() {
@@ -84,6 +85,14 @@ public class HelloController {
     public void newGame(ActionEvent actionEvent) {
         modell.startNewGame();
         updateScoreLabels();
+        for (Button[] rowButtons : buttons) {
+            for (Button button : rowButtons) {
+                button.setText("");
+            }
+        }
+        if (modell.getPlayer1() == 'O') {
+            makeComputerMove();
+        }
     }
 
     public void deleteGame(ActionEvent actionEvent) {
@@ -94,5 +103,27 @@ public class HelloController {
         }
     }
 
+    private void makeComputerMove() {
+        if (!modell.isGameOver()) {
+            boolean computerMoved = false;
+            while (!computerMoved) {
+                int row = (int) (Math.random() * 3);
+                int col = (int) (Math.random() * 3);
+                if (modell.makeMove(row, col)) {
+                    buttons[row][col].setText(Character.toString(modell.getPlayer1()));
+                    buttons[row][col].setFont(Font.font("System", FontWeight.BOLD, 24));
+                    computerMoved = true;
+                    if (modell.checkForWinner(row, col)) {
+                        updateScoreLabels();
+                    }
+                    modell.switchPlayer();
+                }
+            }
+        }
+    }
 
+    public void notifyComputerMove(int row, int col) {
+
+    }
 }
+
