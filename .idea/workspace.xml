@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a3ba191f-029a-4903-8ad7-436e605f5822" name="Changes" comment="gameboard ready, changed size on the char">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/Modell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/Modell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gametictactoe/gametictactoe/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gametictactoe/gametictactoe/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699635132924</updated>
       <workItem from="1699635134076" duration="9362000" />
-      <workItem from="1699703641176" duration="8147000" />
+      <workItem from="1699703641176" duration="11312000" />
     </task>
     <task id="LOCAL−00001" summary="1 trial">
       <option name="closed" value="true" />
@@ -113,7 +116,14 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1699723230595</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL−00009" summary="gameboard ready, changed size on the char">
+      <option name="closed" value="true" />
+      <created>1699724263279</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1699724263279</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

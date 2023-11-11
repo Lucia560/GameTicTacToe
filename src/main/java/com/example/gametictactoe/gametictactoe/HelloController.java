@@ -10,6 +10,15 @@ import javafx.scene.text.FontWeight;
 
 public class HelloController {
 
+    public Button button00;
+    public Button button01;
+    public Button button02;
+    public Button button10;
+    public Button button11;
+    public Button button12;
+    public Button button20;
+    public Button button22;
+    public Button button21;
     @FXML
     private Label playerLabel;
 
@@ -23,7 +32,18 @@ public class HelloController {
 
     public void initialize() {
         modell = new Modell();
-        updateScoreLabels();
+            updateScoreLabels();
+        buttons = new Button[3][3];
+        buttons[0][0] = button00;
+        buttons[0][1] = button01;
+        buttons[0][2] = button02;
+        buttons[1][0] = button10;
+        buttons[1][1] = button11;
+        buttons[1][2] = button12;
+        buttons[2][0] = button20;
+        buttons[2][1] = button21;
+        buttons[2][2] = button22;
+
     }
     public void cellClicked(ActionEvent actionEvent) {
         Button clickedButton = (Button) actionEvent.getSource();
