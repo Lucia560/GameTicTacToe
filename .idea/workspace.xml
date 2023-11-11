@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3ba191f-029a-4903-8ad7-436e605f5822" name="Changes" comment="update 2">
+    <list default="true" id="a3ba191f-029a-4903-8ad7-436e605f5822" name="Changes" comment="gameboard ready, changed size on the char">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/Modell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/Modell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gametictactoe/gametictactoe/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gametictactoe/gametictactoe/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +55,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699635132924</updated>
       <workItem from="1699635134076" duration="9362000" />
-      <workItem from="1699703641176" duration="6688000" />
+      <workItem from="1699703641176" duration="8147000" />
     </task>
     <task id="LOCAL−00001" summary="1 trial">
       <option name="closed" value="true" />
@@ -109,7 +106,14 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1699705766254</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="gameboard ready, changed size on the char">
+      <option name="closed" value="true" />
+      <created>1699723230595</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1699723230595</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +125,7 @@
     <MESSAGE value="Grafik done" />
     <MESSAGE value="Update" />
     <MESSAGE value="update 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 2" />
+    <MESSAGE value="gameboard ready, changed size on the char" />
+    <option name="LAST_COMMIT_MESSAGE" value="gameboard ready, changed size on the char" />
   </component>
 </project>
