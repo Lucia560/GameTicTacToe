@@ -10,21 +10,22 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <Label text="Player vs Computer">
+    <Label fx:id="playerLabel" text="Player vs Computer">
         <font>
             <Font name="System Bold" size="14.0" />
         </font>
     </Label>
+
     <HBox alignment="CENTER">
-        <Label text="Score: 0 - 0">
+        <Label fx:id="scoreLabel" text="Score: ">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Label>
+
     </HBox>
 
     <GridPane prefHeight="320.0" prefWidth="460.0">
-        <!-- Tic-Tac-Toe game board cells -->
         <Button onAction="#cellClicked" prefHeight="100.0" prefWidth="152.0" text="" GridPane.columnIndex="0" GridPane.rowIndex="0" />
         <Button onAction="#cellClicked" prefHeight="100.0" prefWidth="152.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" />
         <Button onAction="#cellClicked" prefHeight="100.0" prefWidth="152.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="0" />

@@ -40,7 +40,7 @@ public class Modell {
     }
 
 
-    private boolean checkForWinner(int row, int col) {
+    public boolean checkForWinner(int row, int col) {
         char currentPlayer = board[row][col];
 
         if (board[row][0] == currentPlayer && board[row][1] == currentPlayer && board[row][2] == currentPlayer) {
@@ -64,32 +64,24 @@ public class Modell {
         return false;
     }
 
-
-
-
-
-    public char getPlayer1layer1() {
-        // Get the current player ('X' or 'O')
+    public char getPlayer1() {
         return player1;
     }
 
     public int getPlayerScore() {
-        // Get the player's score
         return playerScore;
     }
 
     public int getComputerScore() {
-        // Get the computer's score
         return computerScore;
     }
 
     public char[][] getBoard() {
-        // Get the current state of the game board
         return board;
     }
 
     public boolean isGameOver() {
-        // Check if the game is over (someone won or it's a draw)
+
         return false;
     }
 
@@ -101,5 +93,14 @@ public class Modell {
     public char checkWinner() {
         // Check if there's a winner ('X', 'O', or ' ')
         return ' '; // Return 'X', 'O', or ' ' based on the game state
+    }
+
+    public void switchPlayer() {
+    }
+
+    public void resetGame() {
+    }
+
+    public void startNewGame() {
     }
 }
