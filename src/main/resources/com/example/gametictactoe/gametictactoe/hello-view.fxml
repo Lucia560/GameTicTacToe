@@ -25,15 +25,15 @@
 
     <GridPane prefHeight="320.0" prefWidth="460.0">
         <!-- Tic-Tac-Toe game board cells -->
-        <Button onAction="#cellClicked" prefHeight="81.0" prefWidth="152.0" text="" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <Button onAction="#cellClicked" prefHeight="81.0" prefWidth="152.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-        <Button onAction="#cellClicked" prefHeight="81.0" prefWidth="152.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-        <Button onAction="#cellClicked" prefHeight="81.0" prefWidth="152.0" text="" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <Button onAction="#cellClicked" prefHeight="81.0" prefWidth="152.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <Button onAction="#cellClicked" prefHeight="81.0" prefWidth="152.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-        <Button onAction="#cellClicked" prefHeight="81.0" prefWidth="152.0" text="" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <Button onAction="#cellClicked" prefHeight="81.0" prefWidth="152.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-        <Button onAction="#cellClicked" prefHeight="81.0" prefWidth="152.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <Button onAction="#cellClicked" prefHeight="100.0" prefWidth="152.0" text="" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Button onAction="#cellClicked" prefHeight="100.0" prefWidth="152.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Button onAction="#cellClicked" prefHeight="100.0" prefWidth="152.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <Button onAction="#cellClicked" prefHeight="100.0" prefWidth="152.0" text="" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Button onAction="#cellClicked" prefHeight="100.0" prefWidth="152.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Button onAction="#cellClicked" prefHeight="100.0" prefWidth="152.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <Button onAction="#cellClicked" prefHeight="100.0" prefWidth="152.0" text="" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Button onAction="#cellClicked" prefHeight="100.0" prefWidth="152.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Button onAction="#cellClicked" prefHeight="100.0" prefWidth="152.0" text="" GridPane.columnIndex="2" GridPane.rowIndex="2" />
 
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="120.0" />

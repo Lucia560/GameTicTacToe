@@ -7,6 +7,10 @@ import javafx.scene.control.Label;
 public class HelloController {
     @FXML
     private Label welcomeText;
+    private Modell modell;
+    public void initialize() {
+        modell = new Modell();
+    }
 
     public void restartGame(ActionEvent actionEvent) {
     }
@@ -19,4 +23,5 @@ public class HelloController {
 
     public void cellClicked(ActionEvent actionEvent) {
     }
+
 }
