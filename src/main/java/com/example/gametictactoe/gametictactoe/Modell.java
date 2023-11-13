@@ -23,55 +23,19 @@ public class Modell {
             }
         }
     }
-    public Modell(HelloController controller) {
-        this();
-        this.controller = controller;
-    }
+
+
     public boolean makeMove(int row, int col) {
         if (row < 0 || row >= 3 || col < 0 || col >= 3 || board[row][col] != ' ') {
             return false;
         }
-        board[row][col] = player1;
+        board[row][col] = 'X'; //  player always plays 'X'
 
         if (checkForWinner(row, col)) {
-            if (player1 == 'X') {
-                playerScore++;
-            } else {
-                computerScore++;
-            }
+            playerScore++;
             return true;
         }
-
-
-        player1 = (player1 == 'X') ? 'O' : 'X';
         return true;
-    }
-
-
-    public boolean checkForWinner(int row, int col) {
-        char currentPlayer = board[row][col];
-
-        if (board[row][0] == currentPlayer && board[row][1] == currentPlayer && board[row][2] == currentPlayer) {
-            return true; //row
-        }
-        if (board[0][col] == currentPlayer && board[1][col] == currentPlayer && board[2][col] == currentPlayer) {
-            return true; //column
-        }
-        if (row == col) {
-            if (board[0][0] == currentPlayer && board[1][1] == currentPlayer && board[2][2] == currentPlayer) {
-                return true; // diagonal
-            }
-        }
-
-        if (row + col == 2) {
-            return board[0][2] == currentPlayer && board[1][1] == currentPlayer && board[2][0] == currentPlayer; // diagonal2
-        }
-
-        return false;
-    }
-
-    public char getPlayer1() {
-        return player1;
     }
 
     public int getPlayerScore() {
@@ -82,14 +46,14 @@ public class Modell {
         return computerScore;
     }
 
+    public void setComputerScore(int newScore) {
+        this.computerScore = newScore;
+    }
+
     public char[][] getBoard() {
         return board;
     }
 
-
-    public boolean isGameOver() {
-        return checkForWinner(0, 0) || isBoardFull();
-        }
     public boolean isBoardFull() {
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 3; col++) {
@@ -101,26 +65,20 @@ public class Modell {
         return true;
     }
 
-    public char checkWinner() {
-        for (int i = 0; i < 3; i++) {
-            if (board[i][0] != ' ' && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
-                return board[i][0]; // Row
-            }
-            if (board[0][i] != ' ' && board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
-                return board[0][i]; // Column
-            }
-        }
 
-        if (board[0][0] != ' ' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
-            return board[0][0]; // Diagonal
-        }
-        if (board[0][2] != ' ' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
-            return board[0][2]; // Diagonal
-        }
+   public boolean checkForWinner(int row, int col) {
+       char currentPlayer = board[row][col];
 
+       boolean rowWin = true, colWin = true, diag1Win = true, diag2Win = true;
+       for (int i = 0; i < 3; i++) {
+           if (board[row][i] != currentPlayer) rowWin = false;
+           if (board[i][col] != currentPlayer) colWin = false;
+           if (board[i][i] != currentPlayer) diag1Win = false;
+           if (board[i][2-i] != currentPlayer) diag2Win = false;
+       }
 
-        return ' '; // no winner
-    }
+       return rowWin || colWin || (row == col && diag1Win) || (row + col == 2 && diag2Win);
+   }
 
     public void switchPlayer() {
         if (player1 == 'X') {
@@ -131,73 +89,22 @@ public class Modell {
     }
 
 
+
     public void resetGame() {
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 3; col++) {
                 board[row][col] = ' ';
             }
         }
+        player1 = 'X'; // Reset the starting player
+    }
+
+    public void resetScores() {
         playerScore = 0;
         computerScore = 0;
-        player1 = 'X';
     }
 
-    public void startNewGame() {
-        resetGame();
-    }
-    private void notifyComputerMove(int row, int col) {
-        controller.notifyComputerMove(row, col);
-    }
 
-    public void makeComputerMove() {
-        if (isGameOver()) {
-                return;
-        }
-
-        char opponent = (player1 == 'X') ? 'O' : 'X';
-
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (board[i][j] == ' ') {
-                    board[i][j] = player1;
-
-                    if (checkForWinner(i, j)) {
-                            board[i][j] = ' ';
-                            notifyComputerMove(i, j);
-                            return;
-                        }
-
-                        board[i][j] = opponent;
-
-                    if (checkForWinner(i, j)) {
-                            board[i][j] = player1;
-                            notifyComputerMove(i, j);
-                            return;
-                        }
-
-                        board[i][j] = ' ';
-                    }
-                }
-            }
-
-
-            int row, col;
-            do {
-                row = (int) (Math.random() * 3);
-                col = (int) (Math.random() * 3);
-            } while (!makeMove(row, col));
-
-            notifyComputerMove(row, col);
-        }
-
-
-    public char getComputerPlayer() {
-        return computerPlayer;
-    }
-
-    public void setComputerPlayer(char computerPlayer) {
-        this.computerPlayer = computerPlayer;
-    }
 }
 
 

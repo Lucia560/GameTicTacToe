@@ -45,57 +45,60 @@ public class HelloController {
         buttons[2][2] = button22;
 
     }
+
     public void cellClicked(ActionEvent actionEvent) {
         Button clickedButton = (Button) actionEvent.getSource();
         int row = GridPane.getRowIndex(clickedButton);
         int col = GridPane.getColumnIndex(clickedButton);
 
         if (modell.makeMove(row, col)) {
-            clickedButton.setText(Character.toString(modell.getPlayer1()));
-            Font font = Font.font("System", FontWeight.BOLD, 24);
-            clickedButton.setFont(font);
+            clickedButton.setText("X");
+            clickedButton.setFont(Font.font("System", FontWeight.BOLD, 24));
 
-            if (modell.checkForWinner(row, col)) {
-                if (modell.getPlayer1() == 'X') {
-                    int playerScore = modell.getPlayerScore();
-                    scoreLabel.setText("Score: " + playerScore + " - " + modell.getComputerScore());
-                } else {
-                    int computerScore = modell.getComputerScore();
-                    scoreLabel.setText("Score: " + modell.getPlayerScore() + " - " + computerScore);
-                }
+            if (modell.checkForWinner(row, col) || modell.isBoardFull()) {
+                endGame();
             } else {
-                modell.switchPlayer();
                 makeComputerMove();
             }
         }
     }
 
-
+    private void endGame() {
+        for (Button[] row : buttons) {
+            for (Button btn : row) {
+                btn.setDisable(true); // freeze game
+            }
+        }updateScoreLabels();
+    }
 
     private void updateScoreLabels() {
         playerLabel.setText("Player vs Computer");
         scoreLabel.setText("Score: " + modell.getPlayerScore() + " - " + modell.getComputerScore());
     }
 
-    public void restartGame(ActionEvent actionEvent) {
+    public void restartGame() {
         modell.resetGame();
+        modell.resetScores();
         updateScoreLabels();
+        resetBoardOnUI();
     }
 
-    public void newGame(ActionEvent actionEvent) {
-        modell.startNewGame();
-        updateScoreLabels();
+    private void resetBoardOnUI() {
         for (Button[] rowButtons : buttons) {
             for (Button button : rowButtons) {
                 button.setText("");
+                button.setDisable(false); // reactivate game
             }
-        }
-        if (modell.getPlayer1() == 'O') {
-            makeComputerMove();
         }
     }
 
-    public void deleteGame(ActionEvent actionEvent) {
+
+   public void newGame() {
+       modell.resetGame(); // Resets the board only
+       resetBoardOnUI(); // Update the UI
+   }
+
+    public void deleteGame() {
         for (Button[] rowButtons : buttons) {
             for (Button button : rowButtons) {
                 button.setText("");
@@ -104,26 +107,33 @@ public class HelloController {
     }
 
     private void makeComputerMove() {
-        if (!modell.isGameOver()) {
-            boolean computerMoved = false;
-            while (!computerMoved) {
-                int row = (int) (Math.random() * 3);
-                int col = (int) (Math.random() * 3);
-                if (modell.makeMove(row, col)) {
-                    buttons[row][col].setText(Character.toString(modell.getPlayer1()));
-                    buttons[row][col].setFont(Font.font("System", FontWeight.BOLD, 24));
-                    computerMoved = true;
+
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                if (modell.getBoard()[row][col] == ' ') {
+                    modell.getBoard()[row][col] = 'O'; // Computer plays 'O'
+                    Button btn = buttons[row][col];
+                    btn.setText("O");
+                    btn.setFont(Font.font("System", FontWeight.BOLD, 24));
+
                     if (modell.checkForWinner(row, col)) {
+                        modell.setComputerScore(modell.getComputerScore() + 1); // Update computer score
+                        updateScoreLabels(); // Update the score label
+                        endGame(); // End the game after founding  winner
+                        return;
+                    }
+
+                    if (modell.isBoardFull()) {
                         updateScoreLabels();
+                        endGame();
+                        return;
                     }
                     modell.switchPlayer();
+                    return; // Exit after making one move
                 }
             }
         }
     }
 
-    public void notifyComputerMove(int row, int col) {
-
-    }
 }
 
