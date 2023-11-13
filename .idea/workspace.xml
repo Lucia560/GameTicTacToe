@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3ba191f-029a-4903-8ad7-436e605f5822" name="Changes" comment="The computer move logic is wrong,game logic is not complete">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/Modell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/Modell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/gametictactoe/gametictactoe/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/gametictactoe/gametictactoe/hello-view.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="a3ba191f-029a-4903-8ad7-436e605f5822" name="Changes" comment="The game work flowless, missing tests" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699635132924</updated>
       <workItem from="1699635134076" duration="9362000" />
-      <workItem from="1699703641176" duration="25513000" />
+      <workItem from="1699703641176" duration="26312000" />
     </task>
     <task id="LOCAL−00001" summary="1 trial">
       <option name="closed" value="true" />
@@ -144,7 +139,14 @@
       <option name="presentableId" value="LOCAL−00012" />
       <updated>1699903010110</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL−00013" summary="The game work flowless, missing tests">
+      <option name="closed" value="true" />
+      <created>1699911605335</created>
+      <option name="number" value="LOCAL−00013" />
+      <option name="presentableId" value="LOCAL−00013" />
+      <updated>1699911605335</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +161,7 @@
     <MESSAGE value="gameboard ready, changed size on the char" />
     <MESSAGE value="restart , new game dont work. the computer move is missing" />
     <MESSAGE value="The computer move logic is wrong,game logic is not complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="The computer move logic is wrong,game logic is not complete" />
+    <MESSAGE value="The game work flowless, missing tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="The game work flowless, missing tests" />
   </component>
 </project>
