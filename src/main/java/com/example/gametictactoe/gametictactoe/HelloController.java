@@ -117,9 +117,9 @@ public class HelloController {
                     btn.setFont(Font.font("System", FontWeight.BOLD, 24));
 
                     if (modell.checkForWinner(row, col)) {
-                        modell.setComputerScore(modell.getComputerScore() + 1); // Update computer score
-                        updateScoreLabels(); // Update the score label
-                        endGame(); // End the game after founding  winner
+                        modell.setComputerScore(modell.getComputerScore() + 1);
+                        updateScoreLabels();
+                        endGame();
                         return;
                     }
 
@@ -129,7 +129,7 @@ public class HelloController {
                         return;
                     }
                     modell.switchPlayer();
-                    return; // Exit after making one move
+                    return;
                 }
             }
         }
