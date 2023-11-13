@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3ba191f-029a-4903-8ad7-436e605f5822" name="Changes" comment="restart , new game dont work. the computer move is missing">
+    <list default="true" id="a3ba191f-029a-4903-8ad7-436e605f5822" name="Changes" comment="The computer move logic is wrong,game logic is not complete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/Modell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gametictactoe/gametictactoe/Modell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +55,7 @@
       <option name="presentableId" value="Default" />
       <updated>1699635132924</updated>
       <workItem from="1699635134076" duration="9362000" />
-      <workItem from="1699703641176" duration="16843000" />
+      <workItem from="1699703641176" duration="17284000" />
     </task>
     <task id="LOCAL−00001" summary="1 trial">
       <option name="closed" value="true" />
@@ -129,7 +127,14 @@
       <option name="presentableId" value="LOCAL−00010" />
       <updated>1699727819831</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL−00011" summary="The computer move logic is wrong,game logic is not complete">
+      <option name="closed" value="true" />
+      <created>1699733301234</created>
+      <option name="number" value="LOCAL−00011" />
+      <option name="presentableId" value="LOCAL−00011" />
+      <updated>1699733301234</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +148,7 @@
     <MESSAGE value="update 2" />
     <MESSAGE value="gameboard ready, changed size on the char" />
     <MESSAGE value="restart , new game dont work. the computer move is missing" />
-    <option name="LAST_COMMIT_MESSAGE" value="restart , new game dont work. the computer move is missing" />
+    <MESSAGE value="The computer move logic is wrong,game logic is not complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="The computer move logic is wrong,game logic is not complete" />
   </component>
 </project>
